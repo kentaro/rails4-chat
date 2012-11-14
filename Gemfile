@@ -39,5 +39,6 @@ gem 'jquery-rails'
 
 gem 'redis'
 gem 'puma'
+gem 'foreman'
 gem 'rails_config'
 gem 'turbolinks', github: 'kentaro/turbolinks', branch: 'move_filter_to_before_from_after'
