@@ -16,15 +16,16 @@
 //= require_tree .
 
 $(function () {
-    var result = $('#result');
+    var resultContainer = $('#result');
+    var messageInput    = $('#message');
     var notice = function (message) {
-        result.prepend('<li class="notice">' + message + '</li>');
+        resultContainer.prepend('<li class="notice">' + message + '</li>');
     };
     var error  = function (message) {
-        result.prepend('<li class="error">' + message + '</li>');
+        resultContainer.prepend('<li class="error">' + message + '</li>');
     };
     var line   = function (message) {
-        result.prepend('<li>' + message + '</li>');
+        resultContainer.prepend('<li>' + message + '</li>');
     };
 
     var source = new EventSource('/stream');
@@ -57,8 +58,9 @@ $(function () {
         $.ajax({
             type: 'POST',
             url:  '/post',
-            data: { 'message' : $('#message').val() }
+            data: { 'message' : messageInput.val() }
         }).done(function (res)   {
+            messageInput.val('');
         }).fail(function (error) {
             error('Failed to connect server: ' + error.message);
         });
