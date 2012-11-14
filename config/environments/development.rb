@@ -31,4 +31,9 @@ MyApp::Application.configure do
 
   # Debug mode disables concatenation and preprocessing of assets.
   config.assets.debug = true
+
+  config.allow_concurrency = true
+  config.preload_frameworks = true
+  config.cache_classes = true
+  config.eager_load = true
 end

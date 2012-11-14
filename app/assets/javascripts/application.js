@@ -14,3 +14,53 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(function () {
+    var result = $('#result');
+    var notice = function (message) {
+        result.prepend('<li class="notice">' + message + '</li>');
+    };
+    var error  = function (message) {
+        result.prepend('<li class="error">' + message + '</li>');
+    };
+    var line   = function (message) {
+        result.prepend('<li>' + message + '</li>');
+    };
+
+    var source = new EventSource('/stream');
+
+    source.addEventListener('open', function(event) {
+        notice("Connected to server...");
+    }, false);
+
+    source.addEventListener('message', function(event) {
+        line(event.data);
+    }, false);
+
+    // On closed explicitely by close event
+    source.addEventListener('close', function(event) {
+        source.close();
+        notice("Server emitted close event.");
+    }, false);
+
+    $(window).unload(function () {
+        source.close();
+    });
+
+    // On server closed connection
+    source.addEventListener('error', function(event) {
+        source.close();
+        notice("Connection closed.");
+    }, false);
+
+    $('#post-button').click(function () {
+        $.ajax({
+            type: 'POST',
+            url:  '/post',
+            data: { 'message' : $('#message').val() }
+        }).done(function (res)   {
+        }).fail(function (error) {
+            error('Failed to connect server: ' + error.message);
+        });
+    });
+});

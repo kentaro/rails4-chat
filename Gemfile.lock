@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/kentaro/turbolinks.git
+  revision: a2ac3e8842d90864ed0d6fabc208fa0fa3991b90
+  branch: move_filter_to_before_from_after
+  specs:
+    turbolinks (0.5.1)
+      coffee-rails
+
+GIT
   remote: git://github.com/rails/activerecord-deprecated_finders.git
   revision: dd99c375c44b7cb38c5323cd419a5882817249f0
   specs:
@@ -110,12 +118,17 @@ GEM
     minitest (4.2.0)
     multi_json (1.3.7)
     polyglot (0.3.3)
+    puma (1.6.3)
+      rack (~> 1.2)
     rack (1.4.1)
     rack-test (0.6.2)
       rack (>= 1.0)
+    rails_config (0.3.1)
+      activesupport (>= 3.0)
     rake (10.0.0)
     rdoc (3.12)
       json (~> 1.4)
+    redis (3.0.2)
     sass (3.2.3)
     sprockets (2.8.1)
       hike (~> 1.2)
@@ -128,7 +141,6 @@ GEM
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
-    turbolinks (0.5.1)
     tzinfo (0.3.35)
     uglifier (1.3.0)
       execjs (>= 0.3.0)
@@ -143,9 +155,12 @@ DEPENDENCIES
   coffee-rails!
   journey!
   jquery-rails
+  puma
   rails!
+  rails_config
+  redis
   sass-rails!
   sprockets-rails!
   sqlite3
-  turbolinks
+  turbolinks!
   uglifier (>= 1.0.3)

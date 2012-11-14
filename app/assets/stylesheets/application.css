@@ -11,3 +11,28 @@
  *= require_self
  *= require_tree .
  */
+
+@import url('http://fonts.googleapis.com/css?family=Inder');
+
+body {
+  font-family: 'Inder', sans-serif;
+  color: #333;
+}
+
+ul#result {
+  font-size: 200%;
+  background-color: #f0f0f0;
+  padding: 1em;
+}
+
+ul#result li {
+  list-style-type: none;
+}
+
+.notice {
+  color: #468847;
+}
+
+.error {
+  color: #808080;
+}

@@ -22,9 +22,6 @@ end
 
 gem 'jquery-rails'
 
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -39,3 +36,8 @@ gem 'turbolinks'
 
 # To use debugger
 # gem 'debugger'
+
+gem 'redis'
+gem 'puma'
+gem 'rails_config'
+gem 'turbolinks', github: 'kentaro/turbolinks', branch: 'move_filter_to_before_from_after'

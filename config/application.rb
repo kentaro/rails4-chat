@@ -27,5 +27,8 @@ module MyApp
 
     # Version of your assets, change this if you want to expire all your assets.
     config.assets.version = '1.0'
+
+    # Rails default is AS::SynchronousQueue
+    config.queue = ActiveSupport::Queue.new
   end
 end
