@@ -1,12 +1,4 @@
 GIT
-  remote: git://github.com/kentaro/turbolinks.git
-  revision: a2ac3e8842d90864ed0d6fabc208fa0fa3991b90
-  branch: move_filter_to_before_from_after
-  specs:
-    turbolinks (0.5.1)
-      coffee-rails
-
-GIT
   remote: git://github.com/rails/activerecord-deprecated_finders.git
   revision: dd99c375c44b7cb38c5323cd419a5882817249f0
   specs:
@@ -92,6 +84,13 @@ GIT
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
+
+GIT
+  remote: git://github.com/rails/turbolinks.git
+  revision: c5f52ed4c5c0c68aaecad7bdea6ae0efd181d59b
+  specs:
+    turbolinks (0.5.2)
+      coffee-rails
 
 GEM
   remote: https://rubygems.org/
